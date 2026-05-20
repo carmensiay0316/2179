@@ -14,26 +14,6 @@
         "step": 50,
         "name": "Zoom: "
       }
-    },
-    {
-      "name": "center_to",
-      "value": [134, -28],
-      "bind": {
-        "input": "select",
-        "options": [
-          [134, -28],
-          [145, -36],
-          [115, -27],
-          [153, -28]
-        ],
-        "labels": [
-          "Australia",
-          "South-east Australia",
-          "Western Australia",
-          "Queensland / East coast"
-        ],
-        "name": "Map centre: "
-      }
     }
   ],
 
@@ -47,8 +27,10 @@
 
   "projection": {
     "type": "mercator",
-    "center": {"expr": "center_to"},
-    "scale": {"expr": "zoom_level"}
+    "center": [134, -28],
+    "scale": {
+      "expr": "zoom_level"
+    }
   },
 
   "transform": [
@@ -60,7 +42,7 @@
       "lookup": "map_state_name",
       "from": {
         "data": {
-          "url": "data/students_state_2025_map.csv"
+          "url": "students_state_2025_map.csv"
         },
         "key": "state_name",
         "fields": ["state_abbr", "enrolments"]
@@ -88,6 +70,7 @@
         "format": ","
       }
     },
+
     "tooltip": [
       {
         "field": "map_state_name",
