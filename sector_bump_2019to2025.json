@@ -4,7 +4,7 @@
   "height": 380,
 
   "data": {
-    "url": "data/students_sector_year.csv"
+    "url": "students_sector_year.csv"
   },
 
   "transform": [
